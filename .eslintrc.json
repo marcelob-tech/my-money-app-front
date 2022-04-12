@@ -1,4 +1,9 @@
 {
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "env": {
         "browser": true,
         "es2021": true
@@ -18,7 +23,10 @@
         "react"
     ],
     "rules": {
-        "indent": [0,"tab"],
+        "indent": [
+            0,
+            "tab"
+        ],
         "no-tabs": 0
     }
 }

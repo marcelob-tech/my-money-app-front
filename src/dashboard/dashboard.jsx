@@ -5,7 +5,12 @@ import Content from '../common/template/content'
 export class dashboard extends Component {
   render () {
     return (
-      <div>dashboard</div>
+      <div>
+        <ContentHeader title="Dashboard" small="Versão 1.0" />
+        <Content>
+          <h1>Dashboard</h1>
+        </Content>
+      </div>
     )
   }
 }
