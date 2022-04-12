@@ -3,16 +3,16 @@ import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 
 export class dashboard extends Component {
-  render () {
-    return (
-      <div>
-        <ContentHeader title="Dashboard" small="Versão 1.0" />
-        <Content>
-          <h1>Dashboard</h1>
-        </Content>
-      </div>
-    )
-  }
+	render () {
+		return (
+			<div>
+				<ContentHeader title="Dashboard" small="Versão 1.0" />
+				<Content>
+					<h1>Dashboard</h1>
+				</Content>
+			</div>
+		)
+	}
 }
 
 export default dashboard
