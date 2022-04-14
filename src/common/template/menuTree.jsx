@@ -5,7 +5,7 @@ const menuTree = (props) => {
 
 	// const { isArrowActive, setArrowActive} = useState(false);
 
-	function clickActive () {
+	function clickActive() {
 		console.log('ativando...', active);
 		return (active = !active);
 	}

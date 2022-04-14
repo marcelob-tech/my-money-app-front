@@ -37,10 +37,10 @@
 				"avoidEscape": true
 			}
 		],
-		"eslint space-before-function-paren": [
+		"space-before-function-paren": [
 			"error",
 			"never"
 		],
-		"eslint-env": "es6"
+		"eslint-env": 0
 	}
 }

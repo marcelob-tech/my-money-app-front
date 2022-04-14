@@ -3,20 +3,26 @@ import ContentHeader from '../common/template/contentHeader';
 import Content from '../common/template/content';
 import ValueBox from '../common/widget/valueBox';
 import Row from '../common/layout/row';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getSummary } from './dashboardActions';
+import axios from 'axios';
+const BASE_URL = 'http://localhost:3003/api';
 
-export class dashboard extends Component {
+export class dashboard2 extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { credit: 0, debit: 0 };
+	}
+
 	componentWillMount() {
-		this.props.getSummary();
+		axios
+			.get(`${BASE_URL}/billingCycles/summary`)
+			.then((resp) => this.setState(resp.data));
 	}
 
 	render() {
-		const { credit, debit } = this.props.summary;
+		const { credit, debit } = this.state;
 		return (
 			<div>
-				<ContentHeader title="Dashboard" small="Versão 1.0" />
+				<ContentHeader title="Dashboard" small="Versão 2.0" />
 				<Content>
 					<Row>
 						<ValueBox
@@ -47,10 +53,4 @@ export class dashboard extends Component {
 	}
 }
 
-const mapStateToProps = (state) => ({
-	summary: state.dashboard.summary
-});
-const mapDispatchToProps = (dispatch) =>
-	bindActionCreators({ getSummary }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(dashboard);
+export default dashboard2;
