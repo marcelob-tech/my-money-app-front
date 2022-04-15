@@ -41,6 +41,11 @@
 			"error",
 			"never"
 		],
-		"eslint-env": 0
+		"eslint-env": 0,
+		"react/prop-types": "off",
+		"comma-dangle": [
+			2,
+			"always-multiline"
+		]
 	}
 }
