@@ -48,7 +48,7 @@ export class dashboard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	summary: state.dashboard.summary
+	summary: state.dashboard.summary,
 });
 const mapDispatchToProps = (dispatch) =>
 	bindActionCreators({ getSummary }, dispatch);
