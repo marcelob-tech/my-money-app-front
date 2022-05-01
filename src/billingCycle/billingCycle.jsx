@@ -9,6 +9,8 @@ import TabContent from '../common/tab/tabContent';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectTab, showTabs } from '../common/tab/tabActions';
+import List from '../billingCycle/billingCycleList';
+import Form from './billingCycleForm';
 
 class BillingCycle extends Component {
 	componentDidMount() {
@@ -46,10 +48,10 @@ class BillingCycle extends Component {
 						</TabsHeader>
 						<TabsContent>
 							<TabContent id="tabList">
-								<h1>lista</h1>
+								<List />
 							</TabContent>
 							<TabContent id="tabCreate">
-								<h1>tabCreate</h1>
+								<Form />
 							</TabContent>
 							<TabContent id="tabUpdate">
 								<h1>tabUpdate</h1>
