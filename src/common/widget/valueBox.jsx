@@ -1,5 +1,5 @@
-import React from 'react';
-import Grid from '../layout/grid';
+import React from 'react'
+import Grid from '../layout/grid'
 
 const valueBox = (props) => {
 	return (
@@ -14,7 +14,7 @@ const valueBox = (props) => {
 				</div>
 			</div>
 		</Grid>
-	);
-};
+	)
+}
 
-export default valueBox;
+export default valueBox

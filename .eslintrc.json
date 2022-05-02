@@ -29,7 +29,11 @@
 		],
 		"no-tabs": 0,
 		"no-extra-semi": "off",
-		"semi": "off",
+		"semi": [
+			"off",
+			"error",
+			"never"
+		],
 		"quotes": [
 			1,
 			"single",
@@ -44,8 +48,7 @@
 		"eslint-env": 0,
 		"react/prop-types": "off",
 		"comma-dangle": [
-			2,
-			"always-multiline"
+			"off"
 		]
 	}
 }

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import If from '../operador/if';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import If from '../operador/if'
 
 class tabContent extends Component {
 	render() {
-		const selectedTab = this.props.tab.selected === this.props.id;
-		const visible = this.props.tab.visible[this.props.id];
+		const selectedTab = this.props.tab.selected === this.props.id
+		const visible = this.props.tab.visible[this.props.id]
 		return (
 			<If test={visible}>
 				<div
@@ -15,10 +15,10 @@ class tabContent extends Component {
 					{this.props.children}
 				</div>
 			</If>
-		);
+		)
 	}
 }
 
-const mapStateToProps = (state) => ({ tab: state.tab });
+const mapStateToProps = (state) => ({ tab: state.tab })
 
-export default connect(mapStateToProps)(tabContent);
+export default connect(mapStateToProps)(tabContent)

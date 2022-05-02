@@ -1,7 +1,7 @@
-import React from 'react';
-import { Router, Route, Redirect, hashHistory } from 'react-router';
-import Dashboard from '../dashboard/dashboard';
-import BillingCycle from '../billingCycle/billingCycle';
+import React from 'react'
+import { Router, Route, Redirect, hashHistory } from 'react-router'
+import Dashboard from '../dashboard/dashboard'
+import BillingCycle from '../billingCycle/billingCycle'
 
 const routes = (props) => {
 	return (
@@ -10,7 +10,7 @@ const routes = (props) => {
 			<Route path="/billingCycles" component={BillingCycle} />
 			<Redirect from="*" to="/" />
 		</Router>
-	);
-};
+	)
+}
 
-export default routes;
+export default routes

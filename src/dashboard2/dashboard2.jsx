@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import ContentHeader from '../common/template/contentHeader';
-import Content from '../common/template/content';
-import ValueBox from '../common/widget/valueBox';
-import Row from '../common/layout/row';
-import axios from 'axios';
-const BASE_URL = 'http://localhost:3003/api';
+import React, { Component } from 'react'
+import ContentHeader from '../common/template/contentHeader'
+import Content from '../common/template/content'
+import ValueBox from '../common/widget/valueBox'
+import Row from '../common/layout/row'
+import axios from 'axios'
+const BASE_URL = 'http://localhost:3003/api'
 
 export class dashboard2 extends Component {
 	constructor(props) {
-		super(props);
-		this.state = { credit: 0, debit: 0 };
+		super(props)
+		this.state = { credit: 0, debit: 0 }
 	}
 
 	componentWillMount() {
 		axios
 			.get(`${BASE_URL}/billingCycles/summary`)
-			.then((resp) => this.setState(resp.data));
+			.then((resp) => this.setState(resp.data))
 	}
 
 	render() {
-		const { credit, debit } = this.state;
+		const { credit, debit } = this.state
 		return (
 			<div>
 				<ContentHeader title="Dashboard" small="Versão 2.0" />
@@ -49,8 +49,8 @@ export class dashboard2 extends Component {
 					</Row>
 				</Content>
 			</div>
-		);
+		)
 	}
 }
 
-export default dashboard2;
+export default dashboard2

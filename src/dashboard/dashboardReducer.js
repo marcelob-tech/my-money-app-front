@@ -1,10 +1,10 @@
-const INITIAL_STATE = { summary: { credit: 0, debit: 0 } };
+const INITIAL_STATE = { summary: { credit: 0, debit: 0 } }
 
 export default function dashboarReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case 'BILLING_SUMMARY_FETCHED':
-			return { ...state, summary: action.payload.data };
+			return { ...state, summary: action.payload.data }
 		default:
-			return state;
+			return state
 	}
 }
