@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const menuTree = (props) => {
-	let active = false
+	let active = false;
 
 	// const { isArrowActive, setArrowActive} = useState(false);
 
 	function clickActive() {
-		console.log('ativando...', active)
-		return (active = !active)
+		return (active = !active);
 	}
 
 	return (
@@ -18,7 +17,7 @@ const menuTree = (props) => {
 			</a>
 			<ul className="treeview-menu">{props.children}</ul>
 		</li>
-	)
-}
+	);
+};
 
-export default menuTree
+export default menuTree;

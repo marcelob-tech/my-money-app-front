@@ -8,7 +8,6 @@ import { init } from './billingCycleActions';
 class BillingCycleForm extends Component {
 	render() {
 		const { handleSubmit } = this.props;
-		console.log(this.props);
 		return (
 			<form role="form" onSubmit={handleSubmit}>
 				<div className="box-body">
@@ -18,6 +17,7 @@ class BillingCycleForm extends Component {
 						label="Nome"
 						cols="12 4"
 						placeholder="Informe o nome"
+						readOnly={this.props.readOnly}
 					/>
 					<Field
 						name="month"
@@ -26,6 +26,7 @@ class BillingCycleForm extends Component {
 						cols="12 4"
 						type="number"
 						placeholder="Informe o mês"
+						readOnly={this.props.readOnly}
 					/>
 					<Field
 						name="year"
@@ -34,18 +35,22 @@ class BillingCycleForm extends Component {
 						cols="12 4"
 						type="number"
 						placeholder="Informe o ano"
+						readOnly={this.props.readOnly}
 					/>
 				</div>
 				<div className="box-footer">
-					<button className="btn btn-primary" type="submit">
-						Submit
+					<button
+						className={`btn btn-${this.props.submitColor}`}
+						type="submit"
+					>
+						{this.props.submitLabel}
 					</button>
 					<button
 						onClick={this.props.init}
 						type="button"
-						className="btn btn-default"
+						className={`btn btn-${this.props.cancelColor}`}
 					>
-						Cancelar
+						{this.props.cancelLabel}
 					</button>
 				</div>
 			</form>
