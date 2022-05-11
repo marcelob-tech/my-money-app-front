@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
-import labelAndinput from '../common/form/labelAndinput';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
+import LabelAndInput from '../common/form/labelAndinput';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { init } from './billingCycleActions';
+import CreditList from './creditList';
 
 class BillingCycleForm extends Component {
 	render() {
-		const { handleSubmit } = this.props;
+		console.log('BilliCycleFomrProps###', this.props);
+		const { handleSubmit, credits } = this.props;
 		return (
 			<form role="form" onSubmit={handleSubmit}>
 				<div className="box-body">
 					<Field
 						name="name"
-						component={labelAndinput}
+						component={LabelAndInput}
 						label="Nome"
 						cols="12 4"
 						placeholder="Informe o nome"
@@ -21,7 +23,7 @@ class BillingCycleForm extends Component {
 					/>
 					<Field
 						name="month"
-						component={labelAndinput}
+						component={LabelAndInput}
 						label="Mês"
 						cols="12 4"
 						type="number"
@@ -30,11 +32,16 @@ class BillingCycleForm extends Component {
 					/>
 					<Field
 						name="year"
-						component={labelAndinput}
+						component={LabelAndInput}
 						label="Ano"
 						cols="12 4"
 						type="number"
 						placeholder="Informe o ano"
+						readOnly={this.props.readOnly}
+					/>
+					<CreditList
+						cols="12 6"
+						list={credits}
 						readOnly={this.props.readOnly}
 					/>
 				</div>
@@ -63,6 +70,7 @@ BillingCycleForm = reduxForm({
 	destroyOnUnmount: false,
 })(BillingCycleForm);
 
-// const mapStateToProps = (state) => ({ init: state.billingCycleA.init });
+const selector = formValueSelector('billingCycleForm');
+const mapStateToProps = (state) => ({ credits: selector(state, 'credits') });
 const mapDispatchToProps = (dispatch) => bindActionCreators({ init }, dispatch);
-export default connect(null, mapDispatchToProps)(BillingCycleForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BillingCycleForm);

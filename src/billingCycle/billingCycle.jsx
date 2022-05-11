@@ -11,12 +11,13 @@ import { connect } from 'react-redux';
 import { selectTab, showTabs } from '../common/tab/tabActions';
 import List from '../billingCycle/billingCycleList';
 import Form from './billingCycleForm';
-import { create, update, remove } from './billingCycleActions';
+import { create, update, remove, init } from './billingCycleActions';
 
 class BillingCycle extends Component {
 	componentDidMount() {
-		this.props.selectTab('tabList');
-		this.props.showTabs('tabList', 'tabCreate');
+		// this.props.selectTab('tabList');
+		// this.props.showTabs('tabList', 'tabCreate');
+		this.props.init();
 	}
 
 	render() {
@@ -89,7 +90,7 @@ class BillingCycle extends Component {
 
 const mapDispatchToProps = (dispatch) =>
 	bindActionCreators(
-		{ selectTab, showTabs, create, update, remove },
+		{ init, selectTab, showTabs, create, update, remove },
 		dispatch
 	);
 
