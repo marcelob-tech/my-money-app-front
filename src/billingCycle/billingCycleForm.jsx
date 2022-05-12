@@ -8,7 +8,6 @@ import CreditList from './creditList';
 
 class BillingCycleForm extends Component {
 	render() {
-		console.log('BilliCycleFomrProps###', this.props);
 		const { handleSubmit, credits } = this.props;
 		return (
 			<form role="form" onSubmit={handleSubmit}>
