@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './main/app';
 import { applyMiddleware, createStore } from 'redux';
 import promise from 'redux-promise';
 import multi from 'redux-multi';

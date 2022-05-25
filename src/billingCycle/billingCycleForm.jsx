@@ -21,7 +21,7 @@ class BillingCycleForm extends Component {
 	}
 
 	render() {
-		const { handleSubmit, credits, debits } = this.props;
+		const { handleSubmit, readOnly, credits, debits } = this.props;
 		const { sumOfDebits, sumOfCredits } = this.calculateSummary();
 		return (
 			<form role="form" onSubmit={handleSubmit}>
@@ -72,16 +72,16 @@ class BillingCycleForm extends Component {
 				<div className="box-footer">
 					<button
 						type="submit"
-						className={`btn btn-${this.props.submitClass}`}
+						className={`btn btn-${this.props.submitColor}`}
 					>
 						{this.props.submitLabel}
 					</button>
 					<button
 						type="button"
-						className="btn btn-default"
+						className={`btn btn-${this.props.cancelColor}`}
 						onClick={this.props.init}
 					>
-						Cancelar
+						{this.props.cancelLabel}
 					</button>
 				</div>
 			</form>
