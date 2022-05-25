@@ -13,10 +13,10 @@ class BillingCycleForm extends Component {
 		return {
 			sumOfCredits: this.props.credits
 				.map((c) => +c.value || 0)
-				.reduce(sum),
+				.reduce(sum, 0),
 			sumOfDebits: this.props.debits
 				.map((d) => +d.value || 0)
-				.reduce(sum),
+				.reduce(sum, 0),
 		};
 	}
 
@@ -29,59 +29,59 @@ class BillingCycleForm extends Component {
 					<Field
 						name="name"
 						component={LabelAndInput}
+						readOnly={readOnly}
 						label="Nome"
 						cols="12 4"
 						placeholder="Informe o nome"
-						readOnly={this.props.readOnly}
 					/>
 					<Field
 						name="month"
 						component={LabelAndInput}
+						type="number"
+						readOnly={readOnly}
 						label="Mês"
 						cols="12 4"
-						type="number"
 						placeholder="Informe o mês"
-						readOnly={this.props.readOnly}
 					/>
 					<Field
 						name="year"
 						component={LabelAndInput}
+						type="number"
+						readOnly={readOnly}
 						label="Ano"
 						cols="12 4"
-						type="number"
 						placeholder="Informe o ano"
-						readOnly={this.props.readOnly}
 					/>
 					<Summary credits={sumOfCredits} debits={sumOfDebits} />
 					<ItemList
 						cols="12 6"
 						list={credits}
+						readOnly={readOnly}
 						field="credits"
 						legend="Créditos"
-						readOnly={this.props.readOnly}
 					/>
 					<ItemList
 						cols="12 6"
 						list={debits}
+						readOnly={readOnly}
 						field="debits"
 						legend="Débitos"
 						showStatus={true}
-						readOnly={this.props.readOnly}
 					/>
 				</div>
 				<div className="box-footer">
 					<button
-						className={`btn btn-${this.props.submitColor}`}
 						type="submit"
+						className={`btn btn-${this.props.submitClass}`}
 					>
 						{this.props.submitLabel}
 					</button>
 					<button
-						onClick={this.props.init}
 						type="button"
-						className={`btn btn-${this.props.cancelColor}`}
+						className="btn btn-default"
+						onClick={this.props.init}
 					>
-						{this.props.cancelLabel}
+						Cancelar
 					</button>
 				</div>
 			</form>
@@ -93,7 +93,6 @@ BillingCycleForm = reduxForm({
 	form: 'billingCycleForm',
 	destroyOnUnmount: false,
 })(BillingCycleForm);
-
 const selector = formValueSelector('billingCycleForm');
 const mapStateToProps = (state) => ({
 	credits: selector(state, 'credits'),
