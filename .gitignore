@@ -1,10 +1,7 @@
-node_modules
-.vscode
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-dist
-
-/.pnp
-.pnp.js
+# dependencies
+/node_modules
 
 # testing
 /coverage
@@ -14,7 +11,6 @@ dist
 
 # misc
 .DS_Store
-.env
 .env.local
 .env.development.local
 .env.test.local
@@ -23,5 +19,3 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-*.log

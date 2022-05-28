@@ -1,12 +1,10 @@
 import React from 'react'
 
-const footer = (props) => {
-  return (
-    <footer className='main-footer'>
-        Copyright &copy;: 2022
-        <a href="http://www.google.com" target="_blank" rel="noopener noreferrer"> Meu Site</a>.
+export default props => (
+    <footer className='main-footer'> 
+        <strong> 
+            Copyright &copy; 2017
+            <a href='http://cod3r.com.br' target='_blank'> Cod3r</a>.
+        </strong>
     </footer>
-  )
-}
-
-export default footer
+)

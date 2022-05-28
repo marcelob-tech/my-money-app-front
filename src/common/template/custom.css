@@ -1,17 +1,13 @@
 .main-footer {
-	position: fixed;
-	margin-bottom: 0;
-	width: 100%;
+    position: fixed;
+    bottom:0px;
+    width:100%;
 }
 
 button {
-	margin-left: 1rem;
+    margin-left: 5px;
 }
 
 .table-actions {
-	width: 14rem;
-}
-
-.table-actions-credit-debit {
-	width: 17rem;
+    width: 150px;
 }
